@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Completion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #0073e6;
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .menu {
+            display: flex;
+            gap: 1rem;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+        .certificate {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+        }
+        .certificate .header, 
+        .certificate .subheader, 
+        .certificate .name, 
+        .certificate .details, 
+        .certificate .signature, 
+        .certificate .footer {
+            font-weight: bold;
+            color: #000;
+        }
+        .certificate .image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #0073e6;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 1rem;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Certificate</div>
+        <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    <div class="certificate">
+        <div class="header">Certificate of Completion</div>
+        <div class="subheader">This is to certify that</div>
+        <div class="name">Vedant Rajendra Deokar</div>
+        <div class="details">
+            Roll No: 9<br>
+            Amrutvahini College of Engineering, Sangamner<br>
+            Certificate in Full Stack Development
+        </div>
+        <img class="image" src="/img/ved.jpg" alt="Vedant's Photo">
+        <div class="signature">Vedant R Deokar</div>
+        <div class="footer">
+            Date of Completion: January 2025
+        </div>
+    </div>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
